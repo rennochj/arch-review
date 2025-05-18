@@ -1,0 +1,56 @@
+{
+    "name": "python-chainguard",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "mounts": [
+    ],
+    "containerEnv": {
+        "TZ": "America/Chicago",
+        "POETRY_VIRTUALENVS_IN_PROJECT": "true",
+        "PYTHONPATH": "${containerWorkspaceFolder}"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "ms-python.mypy-type-checker",
+                "ms-toolsai.jupyter",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.makefile-tools",
+                "shd101wyy.markdown-preview-enhanced",
+                "yzhang.markdown-all-in-one",
+                "hediet.vscode-drawio",
+                "takumii.markdowntable",
+                "csholmq.excel-to-markdown-table",
+                "janisdd.vscode-edit-csv",
+                "mechatroner.rainbow-csv",
+                "amazonwebservices.aws-toolkit-vscode",
+                "mark-tucker.aws-cli-configure",
+                "boto3typed.boto3-ide",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "ms-vscode.test-adapter-converter",
+                "littlefoxteam.vscode-python-test-adapter",
+                "njpwerner.autodocstring"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "always"
+                },
+                "isort.args": ["--profile", "black"],
+                "mypy.enabled": true,
+                "mypy.dmypy": true
+            }
+        }
+    },
+    "remoteUser": "nonroot"
+    // "postCreateCommand": "pip install -e '.[dev]' && pre-commit uninstall && python3.13 -m pip install --upgrade pip"
+}

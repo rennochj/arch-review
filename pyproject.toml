@@ -1,0 +1,16 @@
+[project]
+name = "arch-review"
+version = "0.1.0"
+description = "A tool for reviewing and analyzing architecture decisions"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "docling>=2.32.0",
+    "fastmcp>=2.3.4",
+    "mcp>=1.9.0",
+    "mypy>=1.15.0",
+    "pydantic>=2.11.4",
+    "pymupdf4llm>=0.0.24",
+    "pyyaml",
+    "structlog>=25.3.0",
+]
