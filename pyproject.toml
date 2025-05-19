@@ -5,6 +5,7 @@ description = "A tool for reviewing and analyzing architecture decisions"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "asyncio>=3.4.3",
     "docling>=2.32.0",
     "fastmcp>=2.3.4",
     "mcp>=1.9.0",

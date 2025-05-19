@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "convert-design-specs": {
+            "type": "stdio",
+            "command": "${workspaceFolder}/.venv/bin/python",
+            "args": [
+                "${workspaceFolder}/arch-review/main.py"
+            ]
+        }
+    }
+}
