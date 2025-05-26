@@ -1,6 +1,6 @@
 # Ignore the cache folder
 
-cache**
+context**
 
 
 # Byte-compiled / optimized / DLL files

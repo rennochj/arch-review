@@ -23,7 +23,7 @@ logger = get_logger("arch-review")
 
 
 class Config(BaseModel):
-    cache_dir: str = "cache"
+    context_dir: str = "context"
     design_files: Dict[str, str]
 
     def __init__(self, config_file: str = "design_spec.yaml"):
@@ -55,22 +55,22 @@ def convert_design_files(design_spec_yaml: str) -> str:
 
     config = Config(design_spec_yaml)
 
-    if os.path.exists(config.cache_dir):
-        shutil.rmtree(config.cache_dir)
+    if os.path.exists(config.context_dir):
+        shutil.rmtree(config.context_dir)
 
-    os.makedirs(config.cache_dir, exist_ok=True)
+    os.makedirs(config.context_dir, exist_ok=True)
 
     for key in config.design_files.keys():
         logger.info("Processing design file", design_file=key)
         converter = DocumentConverter()
         result = converter.convert(config.design_files[key])
-        md_filename = f"{config.cache_dir}/{key}.md"
+        md_filename = f"{config.context_dir}/{key}.md"
         result.document.save_as_markdown(
             md_filename, image_mode=ImageRefMode.REFERENCED
         )
         logger.info("Saved markdown file", md_filename=md_filename)
 
-    return f"The design specification files have been saved to {config.cache_dir}"
+    return f"The design specification files have been saved to {config.context_dir}"
 
 
 # ---------------------------------------------------------------------------------------------------------------------

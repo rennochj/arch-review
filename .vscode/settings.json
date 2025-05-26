@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "arch-review/**": "arch-review-app",
+        "context/**": "arch-context",
+    },
+    "github.copilot.enable": {
+        "arch-review-app": false,
+        "arch-context": true
+    }
+}

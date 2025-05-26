@@ -1,4 +1,3 @@
 design_files:
-  "architecture-example": "architecture-example.pptx"
+  "architecture-example": "documents/architecture-example.pptx"
   "docling": "https://python.langchain.com/docs/integrations/document_loaders/docling/"
-  "proxy": "https://github.com/rennochj/proxy-statements"
